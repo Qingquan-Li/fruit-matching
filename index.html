@@ -441,6 +441,7 @@
       },
       // Initialize execution
       mounted() {
+        this.detectMobile()
         this.descriptionAlert()
       },
       methods: {
@@ -518,6 +519,12 @@
         },
         incrementTime() {
           this.time = parseInt(this.time) + 1;
+        },
+        // Initialize the popup
+        detectMobile() {
+          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            alert("Mobile devices are not supported. Please open on a Desktop Browser.")
+          }
         },
         // Initialize the popup
         descriptionAlert() {
